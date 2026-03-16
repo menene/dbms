@@ -1,6 +1,6 @@
-# 01 — MariaDB
+# 02 — PostgreSQL
 
-Configuración para levantar una instancia de **MariaDB** junto con **Adminer** para visualizar y administrar los datos desde el navegador.
+Configuración para levantar una instancia de **PostgreSQL** junto con **Adminer** para visualizar y administrar los datos desde el navegador.
 
 ## Requisitos
 
@@ -17,12 +17,12 @@ docker compose up -d
 
 | Servicio | URL | Usuario | Contraseña |
 |----------|-----|---------|------------|
-| Adminer  | http://localhost:8080 | `root` | `root` |
+| Adminer  | http://localhost:8080 | `postgres` | `root` |
 
 En Adminer selecciona:
-- **Sistema:** MySQL
-- **Servidor:** `mariadb`
-- **Usuario:** `root`
+- **Sistema:** PostgreSQL
+- **Servidor:** `postgres`
+- **Usuario:** `postgres`
 - **Contraseña:** `root`
 - **Base de datos:** `dbms` (opcional)
 

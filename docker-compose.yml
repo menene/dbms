@@ -1,12 +1,12 @@
 services:
-  mariadb:
+  postgres:
     build: .
-    container_name: mariadb
+    container_name: postgres
     restart: unless-stopped
     ports:
-      - "33066:3306"
+      - "54326:5432"
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
 
   adminer:
     image: adminer:latest
@@ -15,7 +15,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - mariadb
+      - postgres
 
 volumes:
-  mariadb_data:
+  postgres_data:

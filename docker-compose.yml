@@ -1,0 +1,21 @@
+services:
+  mariadb:
+    build: .
+    container_name: mariadb
+    restart: unless-stopped
+    ports:
+      - "33066:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb_data:
